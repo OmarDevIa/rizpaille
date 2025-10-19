@@ -1,0 +1,89 @@
+{% extends 'restaurant/base/base.html' %}
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'restaurant/css/about.css' %}">
+
+<div class="about-wrapper">
+
+    <!-- Header -->
+    {% include 'restaurant/semantics/header.html' %}
+
+    <!-- Hero Section -->
+    <section class="about-hero" style="background-image: url('{% static 'restaurant/img/horo.jpg' %}');">
+        <div class="overlay">
+            <h1>À propos de La RizPaille</h1>
+            <p>La saveur et l’authenticité au cœur de chaque plat</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="about-story container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="{% static 'restaurant/img/hero.jpg' %}" alt="Notre restaurant" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h2>Notre Histoire</h2>
+                <p>
+                    Depuis sa création, La RizPaille s’est donné pour mission d’offrir une expérience culinaire authentique, 
+                    mêlant les saveurs traditionnelles et une touche moderne. Chaque plat est préparé avec soin, des ingrédients 
+                    frais et locaux pour garantir un goût inoubliable.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="about-mission container text-center">
+        <h2>Notre Mission</h2>
+        <p>
+            Offrir à nos clients un voyage culinaire unique, alliant qualité, saveur et convivialité. 
+            Nous croyons que chaque repas doit être une expérience mémorable.
+        </p>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <h4>Qualité</h4>
+                <p>Des ingrédients frais et soigneusement sélectionnés pour chaque plat.</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Convivialité</h4>
+                <p>Un service chaleureux et un environnement accueillant pour tous nos clients.</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Innovation</h4>
+                <p>Des recettes créatives qui marient tradition et modernité.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="about-team container">
+        <h2 class="text-center mb-4">Notre Équipe</h2>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="{% static 'restaurant/img/cheff.jpg' %}" alt="Chef" class="img-fluid rounded-circle mb-2" style="width: 150px;">
+                <h5>Samir Ndiga</h5>
+                <p>Chef Cuisinier</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="{% static 'restaurant/img/managert.jpg' %}" alt="Manager" class="img-fluid rounded-circle mb-2" style="width: 150px;">
+                <h5>Mario Mondesir</h5>
+                <p>Responsable Restaurant</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="{% static 'restaurant/img/waiter.jpg' %}" alt="Serveur" class="img-fluid rounded-circle mb-2" style="width: 150px;">
+                <h5>Maya Diallo</h5>
+                <p>Service Client</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="about-cta text-center">
+        <h3>Venez goûter la différence à La RizPaille !</h3>
+        <a href="{% url 'contact' %}" class="btn btn-primary mt-3">Réservez une table</a>
+    </section>
+
+</div>
+{% endblock content %}
