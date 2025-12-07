@@ -132,7 +132,7 @@ USE_TZ = True
 #BASE_DIR = Path(__file__).resolve().parent.parent
 
 # --- Fichiers statiques (CSS, JS, images du site)
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 #STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # WhiteNoise sert depuis ici
 
@@ -142,14 +142,22 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Dossier où seront stockées les
  
 
  
+
+
+
+MEDIA_URL = '/media/'  # URL pour accéder aux fichiers médias
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Dossier où seront stockées les images
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Dossier où les fichiers statiques seront collectés
+ 
  
 # Pour servir les fichiers statiques en mode debug désactivé
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 LOGIN_URL ='/login/'
 
 
@@ -228,4 +236,3 @@ JAZZMIN_UI_TWEAKS = {
 }
 
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
