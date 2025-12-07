@@ -135,13 +135,18 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # WhiteNoise sert depuis ici
 
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / "media"
-
-
-MEDIA_URL = 'media/'
-MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')
+MEDIA_URL = '/media/'  # URL pour accéder aux fichiers médias
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Dossier où seront stockées les images
+ 
+ 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Dossier où les fichiers statiques seront collectés
+ 
+# Pour servir les fichiers statiques en mode debug désactivé
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 
 LOGIN_URL ='/login/'
