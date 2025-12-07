@@ -16,8 +16,8 @@
 <div class="col-3 login text-center">
 
     <h2>Login In</h2>
-    <form method="post" class="login-form" enctype="multipart/form-data">
-        {% csrf_token %}
+   <form method="post" class="login-form" enctype="multipart/form-data">
+    {% csrf_token %}
 
         {{ login_form|crispy }}
 
